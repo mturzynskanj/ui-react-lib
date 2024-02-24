@@ -1,5 +1,5 @@
 {
-  "name": "@mturzynskajs/ui-react-lib",
+  "name": "@mturzynskanj/ui-react-lib",
   "version": "1.0.0",
   "description": "A personalized UI library",
   "main": "dist/cjs/index.js",
