@@ -3,9 +3,15 @@
   "version": "1.0.0",
   "description": "A personalized UI library",
   "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js"
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "rollup -c --watch",
+    "build": "rollup -c"
   },
   "author": "mturzynska",
   "license": "ISC",
@@ -20,5 +26,8 @@
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-typescript": "^11.1.6"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/mturzynskajs"
   }
 }

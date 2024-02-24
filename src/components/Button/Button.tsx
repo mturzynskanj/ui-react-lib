@@ -2,7 +2,7 @@ type Props = {
   text: string;
 };
 
-const Button: React.FC = ({ text }: Props) => {
+const Button: React.FC<Props> = ({ text }) => {
   return <button>{text}</button>;
 };
 
