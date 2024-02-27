@@ -5,9 +5,13 @@ import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss";
 import packageJson from "./package.json" assert { type: "json" };
 
+const extensions = [".ts", ".tsx"];
 export default [
   {
     input: "src/index.ts",
+    watch: {
+      buildDelay: 500,
+    },
     output: [
       {
         file: packageJson.main,
@@ -21,7 +25,7 @@ export default [
       },
     ],
     plugins: [
-      resolve(),
+      resolve({ extensions }),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
       postcss({
@@ -31,6 +35,7 @@ export default [
         modules: true,
       }),
     ],
+    external: ["react", "react-dom", "react-router"],
   },
   {
     input: "dist/esm/types/index.d.ts",

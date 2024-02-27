@@ -1,8 +1,9 @@
 button {
-  padding: 10px;
-  border: "1px solid green";
+  padding: 5px;
+  border-radius: 5px;
+  opacity: 0.9;
 }
 
 button:hover {
-  background-color: green;
+  background-color: #669966;
 }

@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Button.css";
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "primary" | "secondary";
+  onClick: () => void;
 }
 
 const Button: React.FC<ButtonProps> = ({ variant, ...props }) => {
@@ -28,9 +29,11 @@ const Button: React.FC<ButtonProps> = ({ variant, ...props }) => {
   };
 
   return (
-    <button {...props} style={styles()}>
-      {props.children}
-    </button>
+    <div>
+      <button {...props} style={styles()}>
+        {props.children}
+      </button>
+    </div>
   );
 };
 
