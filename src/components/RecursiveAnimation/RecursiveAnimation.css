@@ -1,0 +1,57 @@
+@keyframes spin-in {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-out {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0);
+  }
+}
+
+body {
+  overflow: hidden;
+}
+
+.root {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+}
+
+.spin {
+  border: 1px solid #ccc;
+  border-radius: 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 91%;
+  height: 91%;
+  animation-name: spin-out;
+  animation-duration: 0.5s;
+}
+
+.spin svg {
+  color: white;
+  font-size: 35px;
+}
+.effect-opacity:hover .spin {
+  animation-name: spin-in;
+  animation-duration: 15s;
+  animation-fill-mode: forwards;
+}
+
+.levels {
+  display: flex;
+  align-items: center;
+}
